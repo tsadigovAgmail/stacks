@@ -1,0 +1,37 @@
+apiVersion: 1.0.0
+metadata:
+  ## generateName devconf2020-demo-
+  name: devconf2020-demo
+
+projects:
+  - name: frontend
+    source:
+      location: 'https://github.com/gothinkster/react-redux-realworld-example-app'
+      type: git
+  - name: backend
+    source:
+      location: 'https://github.com/gothinkster/spring-boot-realworld-example-app.git'
+      type: git
+
+attributes:
+  persistVolumes: 'false'
+
+components:
+  - type: cheEditor
+    id: eclipse/che-theia/7.3.3
+  - type: chePlugin
+    id: che-incubator/typescript/latest
+    memoryLimit: 1Gi
+  # - type: chePlugin
+  #   id: redhat/java/latest
+  #   memoryLimit: 1Gi
+  - alias: java-backend
+    type: dockerimage
+    image: 'quay.io/eclipse/che-java8-maven:nightly'
+    memoryLimit: 1Gi
+    mountSources: true
+    endpoints:
+      - name: web-backend
+        port: 8080
+        attributes:
+          public: 'true'

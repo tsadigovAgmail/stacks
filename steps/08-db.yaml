@@ -18,7 +18,7 @@ attributes:
 
 components:
   - type: cheEditor
-    id: eclipse/che-theia/latest
+    id: eclipse/che-theia/7.3.3
   - type: chePlugin
     id: che-incubator/typescript/latest
     memoryLimit: 1Gi

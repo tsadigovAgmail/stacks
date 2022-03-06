@@ -1,0 +1,14 @@
+apiVersion: 1.0.0
+metadata:
+  ## generateName devconf2020-demo-
+  name: devconf2020-demo
+
+projects:
+  - name: frontend
+    source:
+      location: 'https://github.com/gothinkster/react-redux-realworld-example-app'
+      type: git
+  - name: backend
+    source:
+      location: 'https://github.com/gothinkster/spring-boot-realworld-example-app.git'
+      type: git

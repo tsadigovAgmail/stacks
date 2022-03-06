@@ -1,0 +1,4 @@
+apiVersion: 1.0.0
+metadata:
+  ## generateName devconf2020-demo-
+  name: devconf2020-demo
